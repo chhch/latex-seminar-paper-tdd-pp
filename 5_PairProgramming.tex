@@ -1,0 +1,337 @@
+\section{Pair-Programming} \label{sec:pp}
+
+Pair-Programming (PP) bezieht sich auf eine Praxis, bei der zwei Programmierer an einem Rechner am gleichen Design, Algorithmus, Code oder Test zusammenarbeiten \cite{Williams2003BuildingExperiments}. Das Paar besteht aus zwei Entwicklern, die zwischen den Rollen des \textit{Piloten} und \textit{Navigators} wechseln. Der Pilot nimmt alle Tastatur- und Maus-Eingaben innerhalb der Entwicklungsumgebung vor. Der Navigator beobachtet die Eingaben, vergleicht die tatsächliche Funktionalität des neuen Codes mit der erwarteten Funktionalität und hält die aktive Kommunikation mit dem Pilot hinsichtlich der Korrektheit und Angemessenheit des Codes aufrecht.
+
+PP unterstützt grundlegende Design- und Review-Phasen im Entwicklungsprozess. Die Programmierer müssen mögliche Ansätze diskutieren, über die beste Lösung entscheiden und diese anschließen umsetzten. Beide Mitglieder überprüfen die Argumente des anderen. Hierdurch wird zusätzlich die Fähigkeit der Entwickler erhöht, effektive Bewertungen durchzuführen \cite{Bevan2002GuidelinesClass,Alshehri2014RankingProgramming,Williams2010PairProgramming}.
+
+
+\subsection{Vorteile von Pair-Programming} Begel und Nagappan \cite{Begel2008PairMe} haben 487 Programmierer, inklusive Softwareentwickler, Softwaretester und Manager von Microsoft über ihre Erfahrungen mit Pair-Programming befragt. Im Folgenden sind die von den Teilnehmern beschriebenen Vor- und Nachteile zusammengefasst.
+
+%\subsubsection{Weniger Bugs} Text...
+
+
+
+\subsubsection{ Weniger Bugs} PP reduziert die Anzahl der Fehler erheblich. Außerdem werden Fehler in der Entwicklung früher entdeckt. So kann verhindert werden, dass sie sich tief in das Design einbetten \cite{Begel2008PairMe}.
+
+\subsubsection {Vertieftes Code Verständnis} PP hilft das Code-Verständnis des Paares zu vertiefen. PP führt zu geteilten, gleich guten Kenntnissen des Produkts und ist ein effizientes Mittel, um ein tieferes Verständnis für eine größere Codebasis im gesamten Team zu fördern. Hinsichtlich der Risikovermeidung vermindert PP die Auswirkung von Mitarbeiter-Abwanderungen, da niemals nur eine Person im Team einen bestimmten Teil des Codes kennt \cite{Begel2008PairMe,Williams2010PairProgramming}.
+
+
+\subsubsection{ Hohe Codequalität} PP verbessert die Software-Eigenschaften und die Codequalität in Bezug auf die Übereinstimmung mit vorgegebenen Richtlinien. Durch intensive Überprüfung und Zusammenarbeit verbessert PP die Qualität \cite{Begel2008PairMe,Williams2010PairProgramming}.
+
+\subsubsection{Vom Partner lernen} PP ermöglicht es von dem Partner zu lernen. Damit ist PP ist ein exzellenter Weg, um schnell neue Mitarbeiter einzuarbeiten und neue Techniken schneller zu lernen, da Teilnehmer ihr Wissen mit ihren Mitarbeitern teilen. Mentoring von Kollegen, die mit dem Code nicht vertraut sind, ist ein wichtiger Vorteil von PP. Beide Partner profitieren vom PP, da sie voneinander lernen können \cite{Begel2008PairMe,Williams2010PairProgramming,Cockburn2001TheProgramming}.
+
+\subsubsection{ Menschlicher Faktor} Die Einführung von Paar-Programmierpraktiken ist weder sofort umsetzbar noch einfach. Der Erfolg der Umsetzung dieser Praktiken basiert auf der positiven Erfahrung seitens der Programmierer. Bei überwiegend negativen Erfahrungen kann PP kaum erfolgreich in die Praxis umgesetzt werden. Im besten Fall wird sie nicht so effizient sein wie sie es sein könnte. Viele der in diesem Bereich gemachten Interviews zeigen, dass es häufig vorkommt, dass die Entwickler der Idee des PP eher skeptisch gegenüber sind. Auf der anderen Seite wächst für gewöhnlich die Zufriedenheit der Teilnehmer mit der Zeit – dank der sich einstellenden Erfolgserlebnisse. Darüber hinaus ermöglicht PP in der Regel ein Arbeiten in entspannter Umgebung, wodurch Stress, Langeweile und Frustrationen vermindert werden \cite{Cockburn2001TheProgramming}.
+
+
+
+\subsubsection {Projektmanagement} PP-basierte Projekte bergen weniger Risiken, dass sich der Verlust von erfahrenen Programmierern negativ auf ein Projekt auswirkt, da es mindestens zwei Personen gibt, die mit dem Zustand jeder Aufgabe und mit den erforderlichen Technologien vertraut sind. Dementsprechend wichtig ist es bei Ausfall eines Programmierers, seinen Partner nicht allein weiter arbeiten zu lassen. Stattdessen sollte ein anderer Programmierer der Aufgabe zugeordnet werden, um das Team wieder zu vervollständigen. Im gleichen Sinne wird auch die Rotation von Programmiererpaaren ermutigt, da diese Praxis, die Risiken von Programmiererabwanderungen deutlich verringert. Das rotierende Team profitiert von verbesserter Teambildung und effizienterem Lernen, da die Kommunikation und Kooperation gefördert wird. Die Erhöhung der Kommunikationsfrequenz verbessert die Effizienz und Geschwindigkeit des Teams indem es Lernprozesse beschleunigt und vereinfacht.
+
+
+\subsubsection {Zeitaufwand} Im Zusammenhang mit dem Zeitaufwand für die Entwicklung gibt es keine allgemeine Meinung ob PP vorteilhaft ist oder nicht. Während viele Studien darauf hinweisen, dass Paarprogrammierer eine Aufgabe in weniger Zeit als Solo-Programmierer bewältigen, wird in einigen Fälle das Gegenteil berichtet. Ein erhöhter Zeitaufwand scheint häufiger bei Teams mit unterschiedlichen Lernhintergründen und Expertisen vorzukommen \cite{Cockburn2001TheProgramming}.
+
+
+Dagegen zeigen PP-Studien für gewöhnlich, dass Paar-Programmierer weniger Zeit mit Überprüfung und Testen der Codes verbringen, wohl aufgrund der geringeren Fehlerrate in den Codezeilen.
+
+
+\subsubsection {Besseres Design} PP resultiert in einer besseren Architektur und Umsetzung aufgrund der Einhaltung von gutem Design und Standards, was zu einer positiven Teamerfahrung führt. Um dieses Ziel zu erreichen wird Dissens nicht nur geduldet, sondern sogar ermutigt. Designskizzen und Arbeitsläufe werden von Anfang an kritisch hinterfragt. Entwürfe werden nur dann umgesetzt, wenn diese gut sind, oder sie werden verworfen und durch ein besseres Design ersetzt. Von besonderem Vorteil sind regelmäßige Code-Reviews und die Gewissheit, dass zwei Köpfe mehr leisten können als einer. Kreatives Brainstorming, solide Tests und effizientes Debugging der Software werden gefördert, was sich oft in einer  verbesserten Arbeitsmoral wiederspiegelt \cite{Begel2008PairMe,Cockburn2001TheProgramming}.
+
+\subsection{Nachteile von Pair-Programming}
+
+\subsubsection {Kosteneffizienz} Zu den Nachteilen des PP zählen die erhöhten Kosten. Da PP doppelt so viele Entwickler als Solo-Programming erfordern, werden faktisch zwei Menschen bezahlt, um die Arbeit von einem zu machen. Damit sind die Kosten oft nur schwer zu rechtfertigen. Skeptiker zweifeln, ob die Lösung einer Aufgabe durch zwei Personen den Prinzipien guter Ressourcennutzung entspricht \cite{Begel2008PairMe}.
+
+\subsubsection {Zeitliche Abstimmung} Ein spezielles Problem der Teamarbeit ist die Zeitplanung, da die Partner ihre Zeitpläne eng aufeinander abstimmen müssen, um effektiv arbeiten zu können. Die Abstimmung von zwei Terminkalendern kann schwierig sein, da PP die Auslastung der einzelnen Mitarbeitereee weiter erhöht \cite{Begel2008PairMe}.
+
+\subsubsection {Persönlichkeitskonflikte und Konsensfindung} Das meistzitierte Problem sind Persönlichkeitkonflikte, welche sich oft negativ auf die Produktivität auswirken. Missstimmungen resultieren potenziell auch in einer verringerten Produktqualität. Daher ist das Finden kompatibler Partnern ein entscheidender aber schwieriger Prozess. Grundsätzlich sollten Paar-Programmierer kompatible Persönlichkeiten, Wert-Systeme und Lebensstile haben. Viele Teams scheitern aufgrund von Persönlichkeitskonflikten, die auf mangelnde Konfliktlösungserfahrung, Egoismen und Geltungsdrang eines oder beider Teilnehmer zurückzuführen sind \cite{Begel2008PairMe}. Eng damit verbunden sind Schwierigkeiten mancher Teams einen Konsens bei konkurrierenden Ideen zu finden \cite{Begel2008PairMe}.
+
+
+\subsubsection{ Unterschiedliche Fähigkeiten} In einigen Fällen wurde von Entwicklern berichtet, die darüber besorgt waren mit einem Partner zusammenarbeiten zu müssen der weniger Erfahrungen, Kenntnisse und Fertigkeiten mitbrachte als sie selbst. Sie befürchteten einen Effektivitätsverlust, wenn Sie den unerfahreneren Mitarbeiter allgemeine Grundlagen erklären müssten. Von Ängsten wurde auch im Hinblick auf Unterschiede im Programmierstil sowie der Schwierigkeiten bei der Suche nach einem geeigneten Programmierpartner berichtet \cite{Begel2008PairMe,Cockburn2001TheProgramming,Williams2010PairProgramming}.
+
+
+\subsection{Ergebnisse Studien}
+
+\subsubsection{ Industriepraktiken Pair-Programming}
+
+Auch industrielle Teams haben ihre Erfahrungen mit der Nutzung des PP geteilt. Demnach zögern Praktiker oft mit dem Einstieg in PP. Die Entwickler benötigen oft mehrere Tage, um sich beim Wechsel von Solo-Programmierung zum PP\cite{JariVanhanenHarriKorpi2007ExperiencesProgramming} mit den neuen Praktiken und der Dynamik vertraut zu machen. Oft arbeiten Entwickler nicht den vollen Arbeitstag in Teams. Als eine angemessene Zeitspanne für die Zusammenarbeit werden zwischen 1,5 und 4 Stunden angesehen. Längere Paarprogrammiersitzungen können für Entwickler zur Herausforderung werden. PP ist aufgrund der höheren Geschwindigkeit mit der ein Team arbeiten kann sowie wegen des ständigen Fokus auf die jeweilige Aufgabe, mental sehr anstrengend \cite{Williams2010PairProgramming,Cockburn2001TheProgramming}.
+
+
+In Industrie-Teams ist die Paarrotation eine häufige Praxis, um die Paare dynamisch zu halten und Lernprozesse zu fördern. Viele Teams rotieren täglich manchmal sogar mehrere Male pro Tag. Häufige Paarrotation fördert nachweislich den Wissenstransfer zwischen Kollegen. Insbesondere unterstützt die Paarrotationen das Schulen und Training neuer Teammitglieder, wie Studien von Menlo Innovations, Microsoft, Motorola und Silver Platter Software empirisch belegt haben. Die Zusammensetzung der Programmiererpaare ist in der Regel zufällig und wird oft in einem kurzen Teammeeting entschieden \cite{Williams2010PairProgramming}.
+
+Der Rollentausch zwischen Pilot und Navigator ist für den Motivationserhalt beider Teammitglieder wichtig. Auf der anderen Seite fanden Chong und Hurlbutt \cite{Chong2007TheProgramming} in einer viermonatigen Studie bei zwei professionellen Software-Entwicklungsteams keine eindeutige Pilot / Navigator-Rollen. Stattdessen, engagierten sich Programmierer mit entsprechendem Fachwissen gemeinsam eean Brainstorming und Diskussionen. In diesem Fall repräsentierte der Pilot hauptsächlich die Rolle der Schreibkraft. Lediglich wenn die Programmierer unterschiedliche Kenntnisse hatten, dominierte der Software-Ingenieur mit mehr Fachwissen die Interaktion. Chong und Hurlbutt \cite{Chong2007TheProgramming} stellten ebenfalls fest, dass die Kontrolle über die Tastatur eine raffinierte aber konsequente Wirkung auf die Entscheidungsfindung hatte, mit dem Piloten als endgültigen Entscheidungsträger. Sie beobachteten auch, dass die Tastatur wiederholt hin und her geschoben wurde und dass die Ingenieure am effektivsten waren, wenn sie gemeinsam die Rollen von Pilot und Navigator übernahmen. Die Entwickler zeigten ein höheres Engagement, wenn sie die Tastatur bedienten bzw. die Tastatursteuerung unmittelbar bevorstand. Infolgedessen empfehlen sie die Verwendung von Doppel-Tastaturen und -Mäusen.
+
+Entwicklungsteams bei IBM und Guidant hatten die Wahl zwischen PP und der Inspektions- / Review-Methode. Dies hat die Verwendung von PP auf 5\% bis 50\% der Arbeitszeit bei IBM und auf fast 100\% bei Guidant erhöht.
+
+
+Häufig gaben Entwickler an, dass PP hauptsächlich für Spezifikation, Design und komplexere Programmieraufgaben geeignet ist. Nach Angaben von 295 Beratern gibt es mit PP Qualitätsverbesserungen bei der Lösung komplexer Aufgaben aber keine Qualitätsunterschiede im Vergleich zu Solo-Programmierung bei einfacheren Aufgaben \cite{Williams2010PairProgramming}.
+
+
+Teams waren erfolgreicher, wenn sie einen strukturierten und organisierten Ansatz beim PP verfolgten, im Gegensatz zu Teams, welche ad hoc und unstrukturiert arbeiteten. Eine Umfrage zeigte eine positive Grundhaltung gegenüber PP sowie den Wunsch die Technik häufiger zu verwenden. Allerdings begründeten die befragten Entwickler die Nicht-Verwendung des PP mit logistischen Schwierigkeiten bei der Umsetzung, z.B. wegen eines Mangels an gemeinsamen Arbeitszeiten, unmotivierten Teamleitern und Nichtberücksichtigung des PP in den Projektplänen. Weiterhinsahen es Paarprogrammierer als vorteilhaft an, die Büros gezielt für das PP auszustatten, insbesondere mit großen Schreibtischen, großen Bildschirmen, drahtlosen Mäusen, Doppeltastaturen sowie Whiteboards an den Wänden \cite{Williams2010PairProgramming}.
+
+
+
+\subsubsection{ Ergebnisse der Verwendung von Pair Programming in der Industrie}
+
+
+
+Viele PP-Teams berichten über eine verbesserte Produktqualität. Insbesondere eine große Telekommunikationsfirma in Finnland, deren Software-Ingenieure fast ausschließlich paarweise arbeiteten, hatten nur fünf Fehler in eineinhalb Jahren Produktentwicklung. Eine andere kontrollierte Fallstudie in Finnland demonstrierte die ähnlichen Fehlerraten für Paar- und Solo-Entwickler in einem Projekt und eine sechsmal niedrigere Fehlerrate für PP-Produkte in einem anderen Projekt \cite{Williams2010PairProgramming}.
+
+
+Von einem Programmiererpaar geschriebener Code ist leichter verständlich, da der Code zunächst von einem Pilot geschrieben und anschließend vom Navigator überarbeitet wird, um dessen Kohärenz zu verbessern. Positiv wirkt sich aus, dass der Pilot motiviert ist, den Code leicht verständlich zu halten, um häufige Rückfragen des Navigators zu vermeiden.
+
+
+Teams finden Code, der von einem Paar geschrieben wurde leichter verständlich. Der Code wird von einem Pilot geschrieben und vom Navigator verständlicher gemacht. Der Pilot fühlt sich motiviert, den Code leicht verständlich zu halten, um häufige Rückfragen des Navigators zu vermeiden.
+
+Teams berichten, dass die Verwendung von PP zu ihrer Arbeitsmoral beigetragen hat. Sie bestätigen, dass PP sich auch bei der Verwendung anderer Praktiken, wie z.B. testgetriebenen Entwicklung, Verwendung von Codierungsstandards und häufiger Integration positiv auf die Arbeitsdisziplin auswirkte.
+
+
+Allerdings kann der Geräuschpegel eines diskutierenden Programmiererpaares andere Softwareentwickler bei der Arbeit stören. Ein Raum oder Bereich, der exklusiv für PP vorgesehen ist, kann dazu beitragen, dieses Problem zu lindern \cite{Williams2010PairProgramming}.
+
+
+\subsubsection{ Praktiken für Bildung} Bei der Verwendung von PP in Bildungseinrichtungen bestimmt in der Regel das Lehrpersonal, wie man effektive Teams bildet. Die Lehrkräfte können den Studenten die Möglichkeit geben, ihre Partner frei zu wählen. Alternativ können die Lehrkräfte die am besten geeigneten Programmiererpaare proaktiv bilden. Eine Studie zeigt, dass heterogene Paare, die von einem Mann und einer Frau gebildet wurden, höhere Qualität und kreativere Lösungsansätze hervorbrachten als Teams, die nur aus Männern oder nur aus Frauen bestanden. Eine Studie mit 58 Bachelorstudenten zeigte, dass Teams am besten funktionierten, wenn sie sich die Teilnehmer ähnlich bewerteten, wenn sie nach der Offenheit und dem Verantwortungsgrad des jeweiligen Partners gefragt wurden. Williams et al. \cite{Williams2006ExaminingProgrammers} befragten 1350 Studenten zu den Faktoren, welche das Lehrpersonal verwenden sollten, um proaktiv kompatibel Paare zu bilden. In 93\% der Fälle berichteten die Studenten, mit ihren Partnern kompatibel zu sein. Aus den Ergebnissen lassen sich folgende Regeln zur Bildung hochkompatibler Paare ableiten \cite{Williams2010PairProgramming}:
+
+Teams sollten aus Studenten bestehen, die bezüglich ihrer Informatikkenntnisse und ihres Notendurchschnitts ein ähnliches Niveau an Kenntnissen und Fertigkeiten haben. Darüber hinaus sollten Studentenpaare  aus einem Myers-Briggs-Sensor und einem Myers-Briggs-Intuitor geformt werden, die eine ähnliche Arbeitsmoral haben. Dafür werden die Studenten auf einer Skala von 1 bis 9 bewertet. Studenten, die sich nur so viel anstrengen, um den Kurs gerade noch zu bestehen werden der Kategorie 1 zugewiesen, während Studenten, die sich um die bestmögliche Note bemühen in die Kategorie 9 fallen. Die Paarrotation unter Studenten erfolgt weniger häufig als in der Industrie. Meistens bleiben die Paare für die Dauer einer Aufgabe erhalten, d.h. in der Regel für ein bis drei Wochen. Einige Lehrkräfte bevorzugen Studententeams während desganzen Semester beizubehalten \cite{Williams2010PairProgramming}.
+
+
+\subsubsection{ Ergebnisse der Verwendung von Pair-Programming in Bildungsveranstaltungen} Verschiedene Studien \cite{Layman2005HowCourse, Layman2006ChangingDevelopment, Nagappan2003ImprovingProgramming} haben gezeigt, dass PP ein fortgeschrittenes Lernumfeld schafft, in dem aktives Lernen und soziale Interaktion gefördert wird. Studenten fühlen sich seltener frustriert, haben mehr Selbstvertrauen und mehr Interesse an der Lösung selbst komplexer Aufgaben. Die PP-Vorteile stehen im Kontrast zu den negativen Erfahrungen, die Studenten mit dem traditionellen Solo-Programmier-Ansatz erfahren. Bei letzterem fühlen sich die Studierenden oft isoliert, frustriert und unsicher in Bezug auf ihre Fähigkeiten. PP ermutigt die Studenten, mit Gleichgesinnten in ihrem Umfeld zu interagieren und dadurch eine gemeinsame und positive Lernatmosphäre zu schaffen. Studierende der aktuellen Millenniums-Generation legen besonderen Wert auf kollaborative Umgebungen \cite{Williams2010PairProgramming}.
+
+
+Darüber hinaus stärkt die intensive Zusammenarbeit während des PP die Team- und Kommunikationsfähigkeit der Student, welche insbesondere in der Industrie erforderlich sind. Im Fachbereich Informatik helfen diese Vorteile insbesondere den Frauen ihr Studium fortzusetzen. Im Allgemeinen spiegelt der PP-Ansatz das „Labormodell“, welches in Naturwissenschaften wie Chemie oder Physik üblich ist.
+
+
+Studierende, die zu zweit arbeiten, haben eine bessere Chance Projekte höherer Qualität zu produzieren. Weiterhin haben sie höhere Kursdurchlaufraten, selbst wenn das Projekt in einer verteilten Weise durchgeführt wird.
+
+
+Leider gibt es auch zwei klare Nachteile der PP-Implementierung. Eine kleine Gruppe der Studenten (ca. 5\%) wird sich wohl immer der Gruppenarbeit verweigern. Oft sind dies Top-Studenten, die sich von der Teamarbeit keine Vorteile erhoffen und sich nicht von anderen Studenten bremsen lassen wollen. Ein anderes Problem der Studenten ist die Notwendigkeit, Zeitpläne koordinieren zu müssen, wenn PP außerhalb eines regulären Kurses oder Labors erforderlich ist\cite{Williams2010PairProgramming}.
+
+
+Durch die Nutzung von PP wird die Anzahl der Codezeilen deutlich verringert. Quantitative Studien zeigten auch, dass Studentenpaare Code mit höherer Qualität in rund 20\% weniger Zeilen produziert haben als Solo-Entwickler. Außerdem zeigten die Ergebnisse, dass PP-Code, weniger Fehler hat sowie lesbarer und besser kommentiert ist \cite{Cockburn2001TheProgramming}
+
+\subsubsection {Produktivität der Zeit} Unter Produktivität wird hier die höchste Qualität innerhalb der minimalen Zeit verstanden. Um die PP-Produktivität zu messen führten Kim und Keith \cite{Lui2006PairExpertexpert} den Begriff „Relative Effort Afforded by Pairs“ (REAP) ein, der mit der Produktivität von Solo-Programmierung direkt verglichen werden kann. Die Formel \ref{eqn:Reap} zeigt die Berechnung von REAP, wobei E die verstrichene Zeit („elapsed time“) repräsentiert, die für die Entwicklung von einem Programmierer-Paar (Pair) bzw. von einem Solo-Programmierer aufgewendet wurde.
+
+
+
+\begin{equation}
+\label{eqn:Reap}
+REAP = \frac{E_{pair} * 2 - E_{individual}}{E_{individual}} * 100\%
+\end{equation}
+
+Wenn REAP Null ist, halbiert PP die für die Solo-Programmierung benötigte Zeit. Wenn REAP größer Null aber weniger als 100\% ist, benötigen Paare mehr Gesamtstunden, aber erledigen die Aufgaben schneller. Dies kann vorteilhaft sein, wenn die Zeit bis zur Markteinführung entscheidend für den Erfolg eines Produkts ist. Durch rasche Markteinführung könnte sich das Pionierunternehmen einen größeren Maerktanteil sichern. Damit könnten sich höhere Kosten für eine kürzere Entwicklungszeit auszahlen.
+
+Wenn rasche Markteinführung weniger wichtig ist, stellt sich die Frage, warum Firmen zwei Programmierer beschäftigen sollten, wenn die gleiche Arbeit auch von einem getan werden kann? In diesem Sinne stellt sich auch die Frage, warum erfahrene Programmierer beschäftigt werden sollten, wenn auch unerfahrene Universitätsabsolventen die Arbeit erledigen können? \cite{Lui2006PairExpertexpert}
+
+Experimente haben gezeigt, dass die Qualität der Software die von Paaren entwickelt wurde, in mehr als 80\% der Testfälle einen REAP von etwa 15\% aufwies \cite{Williams2000StrengtheningPair-Programming}. Grundsätzlich wird PP empfohlen, wenn die Qualität einen Schwellenwert von 80\% erreicht. Wird die erwartete Softwarequalität in nur 70\% der Testfälle erreicht, dann wird PP unwirtschaftlich und sollte nicht angewendet werden \cite{Lui2006PairExpertexpert}.
+
+\subsubsection{ Wirtschaftlichkeit} Die finanziellen Kosten des PP sind ein entscheidender Aspekte bei der Auswahl der geignesten Entwicklungsmethode. Ist eine Methode zu teuer, dann wird sie sehr wahrscheinlich nicht implementiert. Oft sehen es Projektmanager als Verschwendung von humanen Ressourcen an,  wenn zwei Personen an der gleichen Aufgabe arbeiten. Dies gilt umso mehr, wenn auch noch  die Arbeitskosten verdoppelt werden.
+
+Da die Wirtschaftlichkeit eines Software-Projekts eng mit dem durch die Programmierung entstehenden Zeitaufwand verbunden ist, können die Kosten für PP in der Tat nahezu doppelt so hoch sein wie für die Solo-Entwicklung, trotz der potentiellen Reduktion der Gesamtprogrammierzeit. Dies liegt darin begründet, dass die Gesamtentwicklungszeit der Summe aller für das Programmieren aufgewendeten Zeit  entspricht. Bei der Berechnung der Gesamtentwicklungszeit müssen aber die Prüf- und Reparaturkosten berücksichtig werden, da diese in der Regel viel größer sind als als die eigentlichen Programmierkosten.
+
+
+In der Software-Entwicklungsbranche zeigten Berichte von IBM aus dem Jahr 1995 durchschnittliche Kosten von über 8000 USD für die Behebung der von Kunden gemeldeten Programmierfehler.  Fallstudien belegen, dass nicht nur die Fehlerrate bei Verwendung der PP-Methodik abnehmen, sondern auch die damit verbundenen Test- und Korrekturarbeiten, weil der Code oft besser entwickelt und verständlicher ist als dies bei Solo-Programmierung der Fall wäre. Daher rechtfertigen die wirtschaftlichen Vorteile im Allgemeinen die Verwendung des PP-Ansatzes \cite{Cockburn2001TheProgramming}.
+
+
+\subsubsection*{Unterschiede zwischen erfahrenen und unerfahrenen Entwicklerpaaren} Unterschiede in der Programmiererfahrung sollten sich auf den Zeitaufwand und die Softwarequalität auswirken. Bei einem Anfänger dauert das Programmieren bei gleicher Aufgabe durchschnittlich länger als bei einem erfahrenen Programmierer. Sobald der Anfänger einige Erfahrungen gesammelt hat, kann er besser und schneller schreiben und sich auch komplexeren Aufgaben zuwenden. Deshalb haben Kim und Keith \cite{Lui2006PairExpertexpert} zwei Gruppe von Programmiererpaaren verglichen: Anfänger – Anfänger und Experte – Experte.
+
+Beim Paar Anfänger – Anfänger arbeiten zwei unerfahrene Programmierer zusammen. Als Hypothese wird vermutet, dass die absolute Programmierzeit reduziert wird und die Aufgabe schneller durchgeführt werden kann als von einem Solo-Programmierer \cite{Lui2006PairExpertexpert}.
+
+Beim Paar Experte – Experte arbeiten zwei erfahrende Entwickler zusammen. Hypothetisch sollte dieses Paar präziser und schneller arbeiten als das Anfängerpaar.
+
+
+\subsubsection*{Grundsätze für Anfänger-Anfänger-Paare vs. Experten-Experte Paare} Lui und Chan \cite{Lui2006PairExpertexpert} beschreiben zwei Grundsätze von PP:
+
+\begin{enumerate}[i]
+\item Ein Paar ist deutlich produktiver und erreicht höhere Qualität und besseres Fehlermanagement in weniger Zeit als zwei individuell arbeitende Einzelpersonen. Wenn das Programmiererpaar unerfahren ist, dann erhöht sich im Vergleich zu erfahreneren Paaren der Aufwand für das Design sowie das Schreiben des Codes und der Algorithmen\cite{Lui2006PairExpertexpert}.
+\item Der Produktivitätsgewinn von PP im Vergleich zur Soloprogrammierung kann deutlich geringer ausfallen, wenn ein Paar bereits vorherige Erfahrung mit einer ähnlichen Aufgabe sammeln konnte und diese Erfahrung noch nicht vergessen hat \cite{Lui2006PairExpertexpert}.
+\end{enumerate}
+
+
+Der Grundsatz (i) bedeutet, dass PP gut funktioniert, wenn ein Team anspruchsvolle Programmieraufgaben zu lösen hat. Damit sind Aufgaben gemeint die nur mit Hilfe komplexer Algorithmen gelöst werden können und nicht Programmierkenntnissen in einer bestimmten Computersprache voraussetzen.
+
+Der Grundsatz (ii) bezieht sich nicht auf Änderungen der Softwarequalität. Er bezieht sich auf die Tatsache, dass Solo-Programmierung produktiver als PP sein kann, wenn Programmierer an Lösungen arbeiten, die sie bereits kennen. Sobald die Teammitglieder eine Programmierlösung gut genug kennen, um diese alleine auszuführen, dann ist es oft effektiver, wenn der Pilot das Schreiben nicht unterbricht, außer für Korrekturen kleinerer (Tipp-)Fehler. Gleichzeitig könnte sich sein Partner, der Navigator, unterfordert fühlen, weil er vom Piloten vor allem bereits bekannte Lösung vorgelegt bekommt.
+
+Wenn beide Grundsätze kombiniert werden, wird deutlich, dass der Produktivitätsgewinn in Bezug auf Zeitaufwand und Softwarequalität bei Anfänger – Anfänger-Paaren im Vergleich zu Solo-Anfänger größer ausfällt als bei Experten – Experten-Paaren im Vergleich zu Solo-Experten \cite{Lui2006PairExpertexpert}.
+
+
+\subsubsection*{Anfänger - Anfänger vs. Anfänger - Experte} Alshehri und Benedicenti \cite{Alshehri2014RankingProgramming} haben PP-Paare unterschiedlichen Gruppen zugeordnet, das Ergebnisse ist in Tabelle \ref{table:PPKlassifizierungPaare} dargestellt.
+
+
+
+\begin{table*}[tb]
+\renewcommand{\arraystretch}{1.3}
+\caption{Klassifizierung der Pair-Programming Paare }
+
+\label{table:PPKlassifizierungPaare}
+\centering
+\begin{threeparttable}
+\begin{tabularx}{\textwidth}{@{}Xllllll@{}}
+\toprule
+Gruppe & Lernen / Wissenstransfer  &  Einfache Aufgabe  &  Komplexe Aufgabe & Geschwindigkeit & Codequalität &  \\ \midrule
+Anfänger-Anfänger &+ & + + & - - & - - -& 0& \\
+Fortgeschrittener-Anfänger &+ + & + &-  &- - & +& \\
+Experte-Anfänger & + + + & - & - &- & + +& \\
+Fortgeschrittener-Fortgeschrittener& + & - & + & +& + +& \\
+Fortgeschrittener-Experte &+ +  &- -  & + + &+ + & + +& \\
+Experte-Experte & + &- - -  &+ + +  &+ + +  & + + +&\\ \bottomrule
+\end{tabularx}
+\medskip
+      \footnotesize\textbf{Legende:}\smallskip
+      \begin{tablenotes}\footnotesize
+      \item{-} leichter Nachteil
+      \item{- -} großer Nachteil
+      \item{- - -} sehr großen Nachteil
+      \item{0} neutral
+      \item{+} leichter Vorteil
+      \item{+ +} großer Vorteil
+      \item{+ + +} sehr großen Vorteil
+      \end{tablenotes}
+      \end{threeparttable}
+\end{table*}
+
+
+\paragraph {Anfänger–Anfänger} Anfänger-Programmiererpaaren sollten relativ einfache Codes zugeteilt werden. Dies ermöglicht eine gute Lernerfahrung für die Programmierer, vor allem wenn jeder Vorkenntnisse aus einem anderen Spezialgebiet mitbringt und diese mit dem Teammitglied teilt. Bei dieser Methode wird aber ein Betreuer benötigt \cite{Alshehri2014RankingProgramming}.
+
+
+\paragraph {Expert – Anfänger} Das Paar Experte – Anfänger ist die beste Wahl, um einen unerfahrenen Programmierer in ein neues Entwicklungsteam oder in ein ungewohntes Projekt einzuführen, da dieser Ansatz eine gute und ständige Führung durch den Expertenprogrammierer ermöglicht. Der Anfänger kann auch dann angeleitet werden, wenn er in der Rolle des Navigators ist. Einer der wichtigsten Vorteile des PP ist die Zeitersparnis für das Einarbeiten neuer Mitarbeiter \cite{Alshehri2014RankingProgramming}.
+
+
+Kritiker könnten diesen Ansatz als Verschwendung von Expertenzeit ansehen. Auf der anderen Seite ist es vorteilhaft, wenn Anfänger die Aufgabe haben, die durch den Experten gemachten Fehler zu finden, da er so gezwungen wird im Zweifelsfall den Piloten nach potentiellen Programmierfehlern zu fragen. Dabei eröffnet der Anfänger unter Umständen auch eine andere Perspektive auf die Arbeit des Experten. Dies setzt voraus, dass der Experte geduldig genug ist dem Anfänger den Code genauer zu erklären. Andernfalls können die Vorteile dieser Paarkombination nicht zum Tragen kommen.
+
+Auch ein übermäßig ausgeprägtes Ego des Experten-Programmierers ist problematisch, da er dem Anfänger das Gefühl geben könnte, für den Erfolg des Teams unbedeutend zu sein. In diesem Fall wird der Anfänger oft vom Experten ignoriert, was eine schlechte Arbeitsatmosphäre schafft. Auf der anderen Seite kann der Anfänger durch Missachtung der Schweigepflicht das Vertrauen des Experten verlieren. In einer solchen Situation kann die Zusammenarbeit selbst dann leiden, wenn die Partner sich wieder einer Solo-Aufgabe widmen.
+
+\paragraph{ Experte-Fortgeschrittener}
+Wenn ein Experte mit einem bereits fortgeschrittenen Entwickler ein Paar bildet, kann der fortgeschrittene Entwickler unter Umständen seine Fähigkeiten weiter verbessern. Voraussetzung ist, dass er sein Wissen erweitern möchte und gut mit dem Experten interagiert. Andernfalls kann die Situation leicht zu Spannungen oder Konflikten führen und die Effizienz des Paares gefährden \cite{Alshehri2014RankingProgramming}.
+
+\paragraph {Experte – Experte} Ein Experten-Programmiererpaar wird dann als die beste Wahl angesehen, wenn ein Team mit sehr komplexen Aufgaben bzw. der Lösung von kritischen Fehlfunktionen konfrontiert wird \cite{Alshehri2014RankingProgramming}.
+
+
+Die Entwicklungszeit ist in der Regel deutlich kürzer als dies mit anderen Paarkombinationen der Fall wäre,  da die Programmierer sich ganz auf Ihre Aufgaben konzentrieren können und weniger Zeit für Erklärungen aufwenden müssen. Es ist auch weniger wahrscheinlich, dass ein Experten-Programmiererpaar, von Problemen blockiert wird. Eine gute Zusammenarbeit von beiden Programmierern ist auch hier entscheidend, da egoistisches Verhalten die größte Bedrohung für Experten–Paar ist.
+
+
+
+\subsubsection *{Vorgeschlagene Kriterien für die Auswahl optimaler Paare} Um geeignete Paare zu bilden, werden bestimmte Kriterien definiert und angewendet, welche das Zusammenstellen der besten Paarkombinationen unterstützen \cite{Alshehri2014RankingProgramming}.
+
+Dabei werden die Kriterien auf Grundlage des Projektziels unterschiedlich gewichtet. Schließlich werden die Kriterien verwendet, um die Eignung der potentiellen Paare objektiv zu bewerten. Die Autoren unterscheiden zwischen:
+
+\begin{enumerate}[a.]
+\item Geschwindigkeit: Paare mit der höchsten Wahrscheinlichkeit, den Codierungsvorgang zu beschleunigen.
+\item Austausch von Wissen: Paare mit der höchsten Wahrscheinlichkeit, Wissen auszutauschen.
+\item Codequalität: Paare mit der besten Wahrscheinlichkeit, die Codequalität zu verbessern.
+\item Lernen: Paare mit der höchsten Wahrscheinlichkeit, eine positive Trainings- und Lernatmosphäre zu schaffen \cite{Alshehri2014RankingProgramming}.
+\end{enumerate}
+
+Die Autoren \cite{Alshehri2014RankingProgramming} haben die Bedeutung dieser Kriterien in drei Industrieunternehmen untersucht, hier A, B und C genannt. Ziel war es, die Kriterien auf Grundlage der Expertenmeinung zu gewichten:
+
+\begin{enumerate}[a.]
+
+\item Die drei Unternehmen bewerteten das Team Experte – Experte  am höchsten, wegen der erreichten Geschwindigkeit und Codequalität. Sie gaben an, dass gemeinsame soziale Aktivitäten der Teammitglieder, die Beziehung im Team stärken und sich positiv auf die Effektivität auswirken können.
+\item in Bezug auf Wissenstransfer bewerteten B und C das Team Experte – Anfänger  am höchsten, während A das Paar Experte – Experte  bevorzugte.
+\item Die Codequalität wurde von Unternehmen B und C als das wichtigste Kriterium angesehen, während von A Wissenstransfer eher als Risiko wahrgenommen wurde.
+\item Hinsichtlich der Lernmethode beurteilten A, B und C das Team Experte – Anfänger  am positivsten.
+
+\end{enumerate}
+
+
+\subsubsection *{Richtlinien des Pair-Programmings} Im Folgenden werden einige Grundlagen von PP beschrieben, welche alle Pair-Programmierer und vor allem Berufseinsteiger berücksichtigen sollten, um die Methode möglichst effizient anwenden zu können.
+
+
+\paragraph{ Alles teilen} Beim PP werden zwei Programmierern gemeinsam mit der Entwicklung eines Programms (Design, Algorithmus, Code etc.) beauftragt. Die beiden Programmierer sind für jeden Aspekt des Programms verantwortlich. Eine Person, der Pilot, tippt oder schreibt, während die andere Person, der Navigator, die Arbeit des Piloten laufend überprüft. Beide sind aber grundsätzlich gleichberechtigt. Es sollte unbedingt vermieden werden, Dinge zu sagen oder zu denken, wie zum Beispiel: „DU hast einen Fehler in DEINEM Design gemacht“ oder „Das Problem ist in DEINEM Teil aufgetreten.“ Stattdessen ist die Devise „WIR haben das Design verpatzt“ oder besser noch „WIR finden keine Fehler im Code.“ Beide Partner sind für jeden Aspekt des Projekts verantwortlich \cite{Williams2000AllKindergarten}.
+
+\paragraph  {Fair spielen} Beim PP hat der Pilot die Kontrolle über die Tastatur bzw. den Entwurf der Designideen, während der Navigator zeitgleich die Arbeit überprüft. Auch wenn einer der beiden Programmierer deutlich erfahrener ist als der andere, ist es wichtig die Aufgabe des Piloten zwischen den Partnern zu alternieren, damit jeder die Perspektive beider Rollen kennenlernen kann. Diese Strategie ermöglicht es sich in die Rolle des Partners hinein zu versetzen und Lernprozesse zu optimieren.
+Die Person, die keinen Code schreibt sollte niemals nur passiver Beobachter sein, sondern immer aktiv und engagiert die Funktionalität der Software prüfen. In einer Umfrage gaben etwa 90\% der PP-erfahrenen Programmierer an, dass die wichtigste Aufgabe des Navigators in einer kontinuierlichen Analyse und Bewertung des Designs und Codes besteht. Während einer der Partner mit dem Design bzw. der Entwicklung des Codes beschäftigt ist, beschäftigt sich der andere mit der strategischen Ebene der Aufgabe; d.h. mit Fragen wie „Wo sind die Entwicklungslinien im Code? Könnte die bisherige Strategie in eine Sackgasse führen? Gibt es womöglich eine effizientere Gesamtstrategie? \cite{Williams2000AllKindergarten}
+
+\paragraph{ Verletzen Sie Ihren Partner nicht} Dennoch muss sichergestellt sein, dass der Partner fokussiert und On-Task bleibt. Zweifellos ist ein wichtiger Vorteil des PP, dass es weit weniger wahrscheinlich ist, dass Zeit mit Email-lesen oder mit Surfen im Internet vergeudet wird, weil die Partner auf den kontinuierlichen Beitrag des jeweils anderen angewiesen sind und auf dessen Input warten. Darüber hinaus erwarten beide vom Partner, dass dieser den etablierten Entwicklungspraktiken folgt.
+Zusammenfassend lässt sich festhalten, dass die Entwicklung der Software effizienter ist als bei der klassischen (Solo-)Programmierung, weil ein gewisses Tempo von der anderen Person vorgegeben wird. Da die Dynamik des PP-Prozesses beide Partner dazu drängt, auf die technische Aufgaben fokussiert und konzentriert zu bleiben, werden enorme Produktivitätsgewinne und Qualitätsverbesserungen erzielt \cite{Williams2000AllKindergarten}.
+
+\paragraph {Kontrollieren Sie negative Gedanken} Die Wahrnehmung ist eine heikle Angelegenheit im menschlichen Dasein. Die gilt natürlich auch für die Arbeitswelt. Wenn du lange genug an etwas glaubst, dann wird dein Gehirn es als wahr betrachten. Wenn du dir etwas Negatives einredest, wie „Ich bin ein schlechter Programmierer“, dann wirst Du schließlich fest davon überzeugt sein, dass dies wirklich zutrifft. Daher ist es so wichtig negativen Gedanken zu kontrollieren. Eine Strategie ist negative Gedanken zu unterdrücken sobald diese einsetzen. Eine andere Strategie ist negative Gedanken mit positivem Denken „zu überschreiben“, was nicht in jeder Situation gelingt.  Daher betonen befragte Paarprogrammierer, wie schwierig es sei mit jemandem zusammenzuarbeiten, der bzgl. seiner Programmierkenntnisse unsicher ist. Solche Personen befürchten, dass den Partner ihre Schwächen herausfinden und gegen sie verwenden könnten. Bei verunsicherten Programmierern sollte PP als Mittel zur Verbesserung ihrer Fähigkeiten eingesetzt werden, z.B. indem sie durch ständiges Beobachten und das Feedback von einem erfahreneren Programmierer lernen.
+
+
+Einer der Befragten gab an, dass das Beste an PP die kontinuierliche Diskussion über Design und Programmierstrategien  war, was ihn zu einem besseren Softwareentwickler gemacht hätte. In diesem Sinne befragten zwei Forscher 750 Programmierer über Kommunikationsstrategien in der Softwareentwicklung (Kraut 1995). Die Kommunikationstechniken mit der höchsten Nutzung und der höchsten Bewertung waren:
+
+„Hilfsbereitschaft und Bescheidenheit“. Bei Auftreten eines Problems, welches nicht alleine gelöst werden kann, wendet man sich ist sich an einen Kollegen (Kraut 1995). Beim PP steht der „Kollege in der Nähe“ immer zur Verfügung. Zusammen kann das Team Probleme lösen, die kaum alleine gelöst werden könnten.
+
+Negative Gedanken wie „Ich bin ein genialer Programmierer, muss aber mit einem totalen Versager zusammenarbeiten“ sollten nicht zugelassen werden, damit sie nicht das Arbeitsklima belasten. Kein Mensch, egal wie geschickt er ist, ist unfehlbar und sollte sich nicht über andere erhaben fühlen. John von Neumann, der geniale Mathematiker und Schöpfer der Neumann Computerarchitektur, erkannte seine eigenen Unzulänglichkeiten und forderte fortwährend andere auf, seine Arbeit zu überprüfen.
+ \cite{Williams2000AllKindergarten}.
+
+
+\paragraph{ Nehmen Sie die Dinge nicht zu ernst} Egoismus-freie Programmierung ist für ein effektives PP unerlässlich, wie bereits vor einem Vierteljahrhundert von Weinberg (1998) in der „Psychologie der Computer-Programmierung“ formuliert. Gemäß der Umfragen zum PP, kann sich ein übermäßiges Ego auf zwei Arten manifestieren, die sich beide negativ auf die Zusammenarbeit auswirken. Erstens, die Haltung „mein Weg oder keiner“ kann andere Ideen unterdrücken und damit verhindern, dass alternative Lösungsansätze berücksichtigt werden. Zweitens, kann ein zu starkes Ego eines Programmierers dazu führen, dass der Partner eine defensive Haltung einnimmt, was der Effizienz schadet.
+
+Umgekehrt kann eine Person, die nicht immer mit ihrem Teampartner einverstanden ist, auch vorteilhaft für die Zusammenarbeit sein. Für einen effektiven Ideenaustausch sind gesunde Meinungsverschiedenheiten wichtig. Daher sollte es eine ausgewogene Balance zwischen zu viel und zu wenig Ego geben. Effektive Paarprogrammierer entwickeln diese Balance während einer Einarbeitungsphase. Laut Cunningham, einem der XP-Gründer und erfahrenen Paarprogrammierer, dauert diese Einarbeitungsphase Stunden oder Tage, je nach den Charaktereigenschaften und der Vorerfahrung der Personen mit PP \cite{Williams2000AllKindergarten}.
+
+
+\paragraph {Einrichtung des Arbeitsplatzes} In der Umfrage gaben 96\% der Programmierer an, dass ein angemessener Arbeitsplatzaufbau für den Erfolg der Projekte ganz entscheidend war. Die Programmierer müssen in der Lage sein, nebeneinander zu sitzen und gleichzeitig zu programmieren, den Computerbildschirm zu betrachten und die Tastatur und die Maus zu bedienen \cite{Williams2000AllKindergarten}.
+
+Eine effektive Kommunikation ist von herausragender Bedeutung, sowohl innerhalb des zusammenarbeitenden Paares als auch mit anderen Programmiererpaaren. Die Programmierer müssen einander ohne viel Aufwand sehen, sich gegenseitig Fragen stellen und Probleme effektiv lösen können. Eine Situation endloser Diskussionen sollte aber vermieden werden. Programmierer profitieren durchaus auch vom Informationsaustauch durch „versehentliches“ Mithören von Gesprächen anderer Programmiererpaare, durch die sie wichtige alternative Problemlösungsansätze lernen können. Separate Büros und Arbeitskabinen können diesen notwendigen Wissensaustausch hemmen \cite{Williams2000AllKindergarten}.
+
+\paragraph{ Legen Sie die Skepsis ab, bevor Sie beginnen} Viele Programmierer nehmen bei ihrer ersten PP-Aufgabe eine skeptisch Haltung hinsichtlich des Wertes der Zusammenarbeit ein, insbesondere weil sie nicht erwarten von der Erfahrung profitieren zu können. Treffen zwei skeptische Programmierer aufeinander, besteht das Risiko einer sich selbstverwirklichenden Prophezeiung. In einer Programmiererumfrage stimmten 91\% zu, dass ein „sich auf den Partner einlassen“ ganz entscheidend für eine erfolgreiche Programmierung war \cite{Williams2000AllKindergarten}.
+
+
+PP-Beziehungen können informell von einem Programmierer gestartet werden, indem er einen anderen bittet sich neben ihn zu setzen, um ihm beim Lösen einer Aufgabe zu helfen. Ist diese anfängliche Erfahrung positiv, dann bietet es sich an die PP fortzusetzen. Die Erfahrung zeigt, dass mit nur einer als positiv erlebten PP-Erfahrung, das Paar zu einem erfolgreichen Team werden kann \cite{Williams2000AllKindergarten}.
+
+
+\paragraph{ Unabhängige von anderen geschriebenen Code unbedingt überprüfen} Es ist unvermeidlich, dass Programmierer ab und an unabhängig von anderen Aufgabe bearbeiten. Von den befragten Programmierern, gab über die Hälfte an, dass sie unabhängig entwickelten Code erst dann in ein Projekt integrierten, nach dem dieser von ihrem Programmierpartner überprüft wurden war. Die Mehrheit der Fehler, die bei der Anwendung der XP-Methode gefunden wurden, ließe sich auf eine Phase zurückverfolgen, in der ein Programmierer selbstständig arbeitete.
+
+Die Entscheidung, die Arbeit selbst zu erledigen und zu überprüfen, kann von einem Programmierer getroffen werden, oder die Wahl kann aktiv gefördert werden, wie es bei der Extremen Programmierung der Fall ist. Allerdings ist es wichtig zu beachten, dass keiner der befragten Programmierer die Arbeit selbständig übernommen hat, ohne sie nochmals zu überprüfen \cite{Williams2000AllKindergarten}.
+
+
+\paragraph{ Ein ausgewogenes Leben erhält die Produktivität im Arbeitsalltag} Die regelmäßige Kommunikation mit anderen ist der Schlüssel für ein ausgewogenes Leben. „Die meisten Programmierer würden vermutlich sagen, dass sie es vorziehen an einem Ort zu arbeiten, wo sie nicht von anderen Menschen gestört werden“ (Weinberg 1998). Es sollte aber berücksichtigt werden, dass informelle Gespräche mit anderen Programmierern einen effektiven Ideenaustausch und einen effizienten Transfer von Informationen ermöglichen \cite{Williams2000AllKindergarten}. Ein Einzelkämpferdasein kann daher schnell in eine intellektuelle Sackgasse führen.
+
+\paragraph{ Legen Sie regelmäßige Pausen ein} Paarprogrammierer motivieren sich gegenseitig auf die Arbeit fokussiert zu bleiben. Die kontinuierliche Konzentration kann sehr intensive und mental anstrengend sein. Daher sind Pausen in regelmäßigen Abständen sehr wichtig. Nur so kann die Ausdauer für eine weitere produktive PP-Runde aufrechterhalten werden. Während der Pausen ist es am besten ganz von dem Programmieraufgabe abzulassen damit ein frischer Neustart möglich ist. Empfohlene Pausenaktivitäten umfassen: E-Mails checken, telefonieren, im Internet surfen, einen Snack essen und etwas trinken \cite{Williams2000AllKindergarten}.
+
+\paragraph{ Zusammenhalt ist der Schlüssel zum Erfolg} Beim PP sollte der Verstand der beiden Programmierer verschmelzen. Es sollte keine Konkurrenz zwischen den beiden geben. Beide müssen auf dasselbe Ziel hin arbeiten, so als ob das Endprodukt von einem einzigen Verstand produziert würde. Probleme oder Fehler sollten niemals auf einen der Partner geschoben werden. Paarprogrammierer müssen sich auf die Einschätzung und die Loyalität des anderen verlassen können.
+
+\paragraph{ Zwei Gehirne sind leistungsfähiger als eins} Das Erinnerungsvermögen und die Lernfähigkeit des Menschen sind begrenzt. Um diese Einschränkungen überwinden zu können ist es wichtig mit anderen zusammenzuarbeiten. Wenn zwei Programmierer zusammenarbeiten, bringt jeder seine eigenen Kenntnisse und Fähigkeiten mit. Eine gewisse Menge an Wissen und Fähigkeiten werden beide teilen, so dass sie effektiv interagieren können. Die einzigartigen Fähigkeiten jedes einzelnen werden es ihnen jedoch ermöglichen, selbst komplexe Aufgaben effektiv zu lösen.
+
+Die Erfahrung zeigt, dass Paarprogrammierer gemeinsam mehr als doppelt so viele Lösungen finden, als wenn die beiden alleine arbeiten würden. Zusammen finden sie schneller die „beste“ Lösung und setzen diese mit höherer Qualität um. Ein Umfrageteilnehmer sagte: „Es ist eine mächtige Technik, da sich zwei Gehirne auf das gleiche Problem konzentrieren. Es zwingt einen sich voll und ganz auf das Problem zu konzentrieren“ \cite{Williams2000AllKindergarten}.
+
+
+
+\subsubsection{Herausforderungen für Berufseinsteiger} \label{sec:PPPotenzial} Nachfolgend werden einige Herausforderungen beschrieben, mit denen PP-Anfänger konfrontiert werden.
+
+
+
+
+\paragraph {Kommunikationsdefizite} Problematisch ist, wenn es keinen effektiven Ideenaustausch bzw. Wissenstransfer gibt.
+\paragraph {Kenntnisunterschiede} Erfahrene Programmierer können auf umfangreiche Gedächtnisinformationen bzgl. alternativer Lösungsansätze zurückgreifen. Anfänger hingegen können für gewöhnlich nicht auf vorheriges Wissen zurückgreifen, sondern müssen sich Lösungsansätze erst herleiten bzw. von anderen erlernen. Darüber hinaus nutzen Experten auch übergeordnetes Wissen, um neue Probleme zu verstehen und zu lösen, während Anfänger dazu neigen, sich auf die spezifischen Lösungen zu konzentrieren, die laut Lehrbuch normalerweise für ein bestimmtes  Problem verwendet werden \cite{Bateson1987CognitiveProgrammers}.
+\paragraph{ Einarbeitung} Die Phase der Einarbeitung kann stressig sein.  Anfänger müssen sich oft mehr Stunden mit PP beschäftigen als seine Kollegen, um neue Techniken und fremden Code zu lernen.
+
+
+Die oben genannten Herausforderungen können von Anfängern kurzfristig überwunden werden, weil
+
+
+\begin{enumerate}[i]
+\item einige Berufseinsteiger während des Studiums Erfahrungen mit der Nutzung von PP gemacht haben;
+\item Studenten durch den Einsatz von PP ihre Zusammenarbeit sowie Team-und Kommunikationsfähigkeit deutlich verbessern können, was beim Berufseinstieg sehr hilfreich ist.
+\end{enumerate}
+
+
+\subsubsection{Einarbeitungsphasen für Berufsanfänger}
+
+Laut Fronza, Sillitti und Succi\cite{Fronza2009AnTeam} sollten Anfänger während der Einarbeitung in ein Team vier Phasen durchlaufen:
+
+\begin{enumerate}[i]
+\item Einführung: Während des ersten Monats seiner Tätigkeit wird ein Anfänger sich die meiste Zeit mit PP beschäftigt, ungefähr 47\% seiner Zeit, von der er über 70\% mit bereits etablierten Teammitgliedern verbringen sollte. Diese Startphase stellt eine wichtige Phase der Wissensvermittlung dar.
+
+\item Unabhängigkeit: In den darauffolgenden zwei Monaten wird vom Anfänger weniger PP (zwischen 3 und 5\% der Zeit) geübt. Davon sollte er die Hälfte der Zeit mit Experten arbeitet. In dieser Zeit versucht der Einsteiger eine gewisse Unabhängigkeit und Selbstständigkeit im Team zu erlangen.
+
+\item Reife: Die dritte Phase findet etwa in den Monaten vier bis acht statt. Der Anfänger beschäftigt sich wieder mehr als 50\% mit PP. In dieser PP-Zeit wird er überwiegend ohne Anleitung von Experten arbeiten und seine Eigenständigkeit innerhalb des Teams festigen.
+
+\item Integration: Schließlich beginnen neue PP-Teammitglieder regelmäßig mit den erfahreneren Teammitgliedern zusammen zu arbeiten. In dieser letzten Phase gibt es keine signifikanten Unterschiede mehr zwischen den Anfänger / Experten-Paaren und den PP-Paaren, die nur aus Experten bestehen.
+\end{enumerate}[i]
+
+\subsubsection{Potenziale für Berufseinsteiger}
+Studien belegen wie PP viele Fähigkeiten eines Anfängers unterstützen und verbessern kann. Nachfolgend werden die wichtigsten Potenziale von PP für Berufsanfänger zusammengefasst.
+
+\begin{enumerate}[i]
+
+
+\item Teamfähigkeit: PP fördert die Gruppenarbeit. Der Einsteiger lernt mit unterschiedlichen Programmierergruppen zu arbeiten und Kontakte zu knüpfen. Dadurch wird Teamfähigkeit trainiert und weiterentwickelt.
+
+\item Kommunikationsfähigkeit: Die regelmäßige Zusammenarbeit im Team verstärkt die Kommunikationsfähigkeit.  Probleme werden gemeinsam analysiert und Lösungsansätze von anderen erlernt. Eine besondere Rolle in diesem Zusammenhang spielt die Paarrotation, bei der Einsteiger sich immer wieder auf neue Teamkollegen einstellen müssen.
+
+\item Einarbeitung: PP bietet dem Einsteiger die exzellente Möglichkeit von den Programmierpartnern neue Techniken und alternative Codes innerhalb kürzester Zeit zu lernen.
+
+\item Verringerte Fehlerrate: Neueinsteiger lernen, dass Programmierfehler aufgrund der ständigen Überprüfung direkt entdeckt und behoben werden. Dadurch verringert sich der Aufwand für separate Codereviews und steigt die Codequalität erheblich.
+
+\item Verantwortung: Das PP-Team entwickelt ein gemeineinsames Verantwortungsbewusstsein für ein Projekt. Der Berufsanfänger lernt rasch, dass nicht Individuen für den Erfolg oder Misserfolg verantwortlich sind, sondern immer das Team gemeinsam. Große und kleine Entscheidungen werden zusammen getroffen und verantwortet.
+
+\end{enumerate}
+
+Zusammenfassend lässt sich feststellen, dass PP das Lernen unterstützt, was insbesondere Berufsanfängern zugutekommt, indem sie sich rasch einarbeiten können. Bei Fragen steht immer ein erfahreneres Teammitglied zur Verfügung. Daher macht das Entwickeln in einer Gruppe dem Anfänger mehr Spaß, als wenn er Aufgabe alleine bearbeiten würde PP ermöglicht einen optimalen Wissenstransfer zwischen neuen und erfahrenen Mitarbeitern und verhindert so die Konzentration von Spezialwissen auf nur wenige Personen. Alle Teammitglieder lernen den Code zu verstehen und beim Ausfall eines Mitarbeiters kann der verbleibende Partner die Aufgabe ohne große Verzögerungen weiterentwickeln.

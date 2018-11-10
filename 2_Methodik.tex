@@ -1,0 +1,160 @@
+%!TEX root = bare_conf.tex
+
+\section{Methodik} \label{sec:methodik}
+
+\subsection{Literatur Review zur testgetriebene Entwicklung} \label{sec:tddMethode}
+Für die Untersuchung der Potenziale der testgetriebenen Entwicklung für Programmieranfänger, wurde eine Literatur Review (LR) durchgeführt. In diesem Abschnitt wird das Vorgehen der LR beschrieben. Deren Auswertung steht in Abschnitt \ref{sec:tdd}.
+
+\subsubsection{Suche} Für die Literatur Review wurden die digitalen Bibliotheken IEEE Explore, ACM Digital Library, SpringerLink und Science Direct - Elsevier durchsucht. Die Suchanfragen bezogen sich immer auf den Titel, der in der Bibliothek enthaltenden Dokumente. Als Suchbegriff wurden Variationen von „test-driven development“, „test-first“ und „tdd“ verwendet.
+
+Alle Anfragen lieferten für die untersuchte Fragestellung relevante Ergebnisse. Nur die Suche nach Dokumenten die „tdd“ im Titel enthielten, listete vorrangig Dokumente ohne Bezug zur testgetriebenen Entwicklung auf. Daher wurde dieser Suche eine weitere Bedingung hinzugefügt, so dass nur Dokumente gesucht wurden, die „tdd“ im Titel \textit{und} das Wort „test“ im Abstrakt enthielten.
+
+Die komplette Suche konnte für die Bibliothek IEEE Explorer in einer Suchabfrage zusammengefasst werden und ist nachfolgend repräsentativ für die Suche in den verschiedenen Bibliotheken dargestellt:\\
+\\
+\textsf{("Document Title":"test-driven development"{}\\
+OR "Document Title":"test driven development"{}\\
+OR "Document Title":"test-first"{}\\
+OR "Document Title":"test first"{}\\
+OR ("Document Title":"tdd"{} AND "{}Abstract":"test"))}.\\
+
+Die Bibliotheken IEEE Explore, SpringerLink und Science Direct zeigten zu jedem Dokument Empfehlungen bzw. ähnliche Dokumente an. Diese Dokumente wurden ebenfalls mit ausgewertet. Insgesamt führte die Suche zu 38 Dokumente.
+
+\subsubsection{Beschreibung der Ausschlusskriterien} Die gefundenen 38 Dokumente wurden jeweils hinsichtlich drei Kriterien untersucht. Die Kriterien können wie folgt zusammengefasst werden:
+\begin{enumerate}[i]
+\item Empirisch Studie mit Fokus auf TDD vs. TLD
+\item Teilnehmer haben theoretische Kenntnisse aber wenig praktische Erfahrung in der Software-Entwicklung
+\item Durchführung der Studie in der Industrie
+\end{enumerate}
+Nachfolgend sind die Kriterien beschrieben.
+
+Erstens sollte es sich bei dem Dokument, um eine empirische Studie handeln. Auswirkung durch die testgetriebene Entwicklung sollten beispielsweise durch Versuche, Umfragen oder Interviews belegt oder widerlegt worden sein. In der Untersuchung im Abschnitt \ref{sec:tdd} stehen die Potenziale der TDD im Vergleich zu denen der traditionellen Entwicklung im Fokus. Daher war es wichtig, dass die TDD oder das traditionelle Vorgehen, auch als test-last Development (TLD) bezeichnet, nicht mit anderen Praktiken kombiniert wurde. Falls zusätzlich, andere Praktiken, wie beispielsweise \textit{Behaviour-Driven Development}, in einer Studie untersucht wurden, sollten die Aussagen der Studie über die TDD und TLD unabhängig davon gültig sein.
+
+Zweitens sollten die Programmierfähigkeiten der Studienteilnehmer berücksichtig worden sein. Für die vorliegende Arbeit war insbesondere die Gruppe von Entwicklern interessant, die bereits einen Studienabschluss im Bereich des Software-Engineerings haben, aber noch keine oder nur wenig praktische Erfahrung in der Industrie vorweisen können.
+
+Für das dritte Kriterium war das Umfeld in dem die Studie durchgeführt wurde entscheidend. Entsprechend der Fragestellung der vorliegenden Arbeit, wurden Studien bevorzugt, deren Untersuchung in einem industriellen Umfeld durchgeführt wurden.
+
+\subsubsection{Anwendung der Ausschlusskriterien} Nach der Anwendung des ersten Kriteriums wurden 13 Dokumente aussortiert.
+
+Die übrigen 25 Studien boten wenig bis keine Informationen über die Programmierfähigkeiten und den TDD-Erfahrungen der Studienteilnehmer. Als Kompromiss für das zweite Kriterium, wurden Studien aussortiert, deren Teilnehmer aus „ungraduated Students“ oder aus professionellen Entwicklern bestanden. Dadurch wurden 22 Studien aussortiert. Übrig blieben fünf Studien, deren Teilnehmer ausschließlich aus „graduated Students“ bestanden. Aussagen über die Programmierfähigkeiten der Studenten konnten aus den Studien selten extrahiert werden.
+
+Von den Studien deren Teilnehmer einen Hochschulabschluss haben, aber nicht in der Industrie tätig sind, wurde keine im industriellen Umfeld durchgeführt. Das dritte Kriterium wurde daher \textit{nicht} angewandt.
+
+Die übrigen gebliebenen drei Studien sind in Tabelle \ref{table:TDDLiteraturReview} beschrieben.
+
+\begin{table*}[tbh]
+\renewcommand{\arraystretch}{1.3}
+\caption{Ergebnisse der TDD Literatur Review}
+\label{table:TDDLiteraturReview}
+\centering
+\begin{tabularx}{\textwidth}{@{}Xp{0.29\textwidth}p{0.24\textwidth}p{0.07\textwidth}p{0.28\textwidth}@{}}
+  \toprule
+  Studie                                & Beschreibung                                                                                                                                                                                                              & Teilnehmer                                                                                                                                                     & Umfeld     & Ergebnis                                                                                                                                                                         \\ \midrule
+  \cite{Causevic2012TestExperiment}     & Studenten wurden in zwei Gruppen eingeteilt. Eine Gruppe entwickelte nach TDD, die andere nach TLD. Der Quellcode, die Testfälle und ein Fragebogen, den die Studenten nach der Entwicklung ausfüllten, wurden analysiert. & 22 Studenten mit einem Abschluss.                                                                                                                                    & akademisch & Im Durchschnitt war die Qualität der Tests beider Gruppen gleich. Die Testabdeckung beider Gruppen war nahezu identisch. Die Summe der gefundene Fehler im Code, war bei der test-first-Gruppe geringer. Die test-first-Gruppe war im Durchschnitt eine Stunde vor der Kontrollgruppe mit der Aufgabe fertig.                                                                                                                \\
+  \cite{Fucci2016AnApproach}            & Studenten haben in TDD und TLD entwickelt.                                                                                                                                                                                & 21 Studenten mit einem Abschluss                                                                                                                               & akademisch & Kein signifikanter Unterschied zwischen TDD und TLD in Testaufwand, externe Codequalität und Produktivität                                                                       \\
+  \cite{Madeyski2010TheExperiment}      & Studenten wurden in test-first und test-last Gruppen eingeteilt.                                                                                                                                                          & Studenten mit einem Abschluss.                                                                                                                                       & akademisch & Kein signifikanter Unterschied zwischen den beiden Gruppen hinsichtlich der Branch Coverage und Mutation Score Indicator.                                                        \\ \bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Snowballing} \label{sec:TDDMethodeSnow}
+
+Aufgrund der geringen Anzahl an übrig gebliebenen Studien, wurde ein Snowballing mit Literatur Reviews (LR) durchgeführt, die während der oben beschrieben Suche ebenfalls gefunden wurden. Eine erneute Suche mit geänderten Suchabfragen blieb aus, da nach Mäkinen und Münch \cite{Makinen2014EffectsStudies} selbst bei hunderten von Publikationen die TDD erwähnen, nur wenige verwertbare Ergebnisse liefern würden.
+
+In Tabelle \ref{table:TDDSnowballing} sind die betrachteten LRs aufgelistet. Wurden in einer LR die Informationen über die Teilnehmer einer empirischen Studie extrahiert und angegeben, ob es sich bei ihnen ausschließlich um Studenten mit einen Abschluss handelt, befindet sich in der Spalte \textit{Teilnehmer als Graduated identifiziert} ein \checkmark. Die Spalte \textit{Auswertung pro Studie} ist mit einem Häkchen versehen, falls separat für jede in der LR analysierte empirische Studie eine Auswertung der Ergebnisse angegeben worden ist, und die LR nicht nur eine zusammenfassende Auswertungen über alle analysierten Studien enthält. Verweist eine LR auf eine andere LR in der Tabelle, ist dies in der letzten Spalte \textit{Referenzen} kenntlich gemacht worden.
+
+Mit Ausnahme von Rafique et al. \cite{Rafique2013TheMeta-Analysis} haben alle untersuchten LRs Aussagen über die interne Codequalität, externe Codequalität und Produktivität getroffen. Rafique et al. \cite{Rafique2013TheMeta-Analysis} verzichtete auf die Auswertung der internen Codequalität, da es dafür noch keine allgemein akzeptierte Metrik gäbe.
+
+\begin{table}[b!]
+\renewcommand{\arraystretch}{1.3}
+\caption{Übersicht von TDD Literatur Reviews}
+\label{table:TDDSnowballing}
+\centering
+\begin{threeparttable}
+\begin{tabularx}{\columnwidth}{@{}XXXl@{}}
+\toprule
+Studien & Studienteilnehmer als „graduate“ identifiziert & Auswertung pro Studie & Referenzen \\ \midrule
+Munir \cite{Munir2014ConsideringReview} & \multicolumn{1}{c}{\checkmark} & \multicolumn{1}{c}{\checkmark} & \cite{Rafique2013TheMeta-Analysis,Kollanus2010Test-DrivenApproach,Shull2010WhatDevelopment,Sfetsos2010EmpiricalReview,Jeffries2007TheProgramming,Causevic2011FactorsReview} \\
+Rafique \cite{Rafique2013TheMeta-Analysis} & \multicolumn{1}{c}{\checkmark} & \multicolumn{1}{c}{\checkmark} & \cite{Kollanus2010Test-DrivenApproach,Turhan2010HowDevelopment,Shull2010WhatDevelopment} \\
+Bissi \cite{Bissi2016TheReview} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\checkmark} & \cite{Munir2014ConsideringReview,Rafique2013TheMeta-Analysis,Sfetsos2010EmpiricalReview,Jeffries2007TheProgramming,Causevic2011FactorsReview} \\
+Kollanus \cite{Kollanus2010Test-DrivenApproach}\tnote{*} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\checkmark} & - \\
+Jeffries \cite{Jeffries2007TheProgramming} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\checkmark} & - \\
+Causevic \cite{Causevic2011FactorsReview} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\checkmark} & - \\
+Sfetsos \cite{Sfetsos2010EmpiricalReview} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\checkmark} & - \\
+Mäkinen \cite{Makinen2014EffectsStudies} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{\checkmark} & \cite{Turhan2010HowDevelopment,Rafique2013TheMeta-Analysis, Jeffries2007TheProgramming} \\
+Turhan \cite{Turhan2010HowDevelopment} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & - \\
+Shull \cite{Shull2010WhatDevelopment} & \multicolumn{1}{c}{-} & \multicolumn{1}{c}{-} & \cite{Turhan2010HowDevelopment} \\ \bottomrule
+\end{tabularx}
+\medskip
+      \footnotesize\textbf{Legende:}\smallskip
+      \begin{tablenotes}\footnotesize
+      \item[*] In \cite{Kollanus2010Test-DrivenApproach} werden die gleichen Studien wie in \cite{Kollanus2011CriticalDevelopment} untersucht.
+      \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+In Munir et al. \cite{Munir2014ConsideringReview} wurden sechs, \cite{Madeyski2010TheExperiment,Madeyski2005PreliminaryQuality,Gupta2007AnDevelopment,Muller2002ExperimentProgramming,Flohr2006LessonsTeachings,Flohr2005AnProblems}, und in Rafique et al. \cite{Rafique2013TheMeta-Analysis} zwei, \cite{Muller2002ExperimentProgramming,Flohr2006LessonsTeachings}, Studien identifiziert, deren Teilnehmer ausschließlich aus Studenten bestanden, die einen Abschluss hatten. Zusätzlich wurde in Rafique et al. \cite{Rafique2013TheMeta-Analysis} eine Studie \cite{Gupta2007AnDevelopment} erwähnt, in der 20 von den 22 Studienteilnehmern einen Abschluss hatten. Die Studie wurde ebenfalls ausgewertet. Abzüglich Überschneidungen zwischen den LRs kamen so weitere sieben Studien zusammen. Von den sieben Studien wurden drei, \cite{Flohr2006LessonsTeachings,Flohr2005AnProblems,Muller2001CaseEnvironment}, aussortiert, da in ihren Untersuchungen TDD zusammen mit Pair-Programming oder einer anderen Praktik aus XP angewendet wurde. Insgesamt wurden durch das Snowballing vier weitere Studien ermittelt.
+
+\subsubsection{Ergebnis} Die drei gefundenen empirischen Studien aus der Suche in den digitalen Bibliotheken und die vier aus den untersuchten LRs wurden verglichen. Nur eine empirische Studie wurde sowohl bei der Suche in den digitalen Bibliotheken als auch bei der Untersuchung der LRs gefunden. Abzüglich dieser Überschneidung, standen für die Auswertung in Abschnitt \ref{sec:tdd} sechs Studien zur Verfügung.% siehe Tabelle \ref{table:TDDAuswertungKomplett}.
+
+\subsection{Methodik Pair-Programming}
+
+\subsubsection{Evaluierungsprotokoll} Für das Pair-Programming wurde ein Protokoll zur systematischen Evaluierung entwickelt. In diesem Protokoll werden Forschungsfragen bzgl. der Suchstrategien, Einschluss- und Ausschlusskriterien, Qualitätsbewertung, Datenextraktion und Synthesemethoden gestellt \cite{Kitchenham2007GuidelinesEngineering,Higgins2008Cochrane}.
+
+\subsubsection{Forschungsfragen} Die folgenden Fragen wurden im Rahmen dieser Arbeit gestellt und beantwortet:
+
+\begin{itemize}
+\item Was ist Pair-Programming (PP)?
+\item Welche Merkmale charakterisieren diese Methode?
+\item Was spricht für und gegen PP?
+\item Wo wird PP angewendet und warum?
+\item Welchen Einfluss hat die Zusammensetzung der Programmiererpaare?
+\item Nach welchen Kriterien werden die Gruppen gebildet?
+\item  Welche Vorteile hat PP für Berufseinsteiger?
+\item Welche Herausforderungen stellt PP an Berufseinsteiger?
+\end{itemize}
+
+\subsubsection{Literaturquellen und Suchkriterien} Die Literaturquellen und Suchkriterien umfassten elektronische Datenbanken. Folgende elektronische Datenbanken wurden durchsucht:
+
+\begin{itemize}
+\item  IEEE Explore
+\item ACM Digital Library
+\item ResearchGate
+\item Google Scholar
+\end{itemize}
+
+Folgende Suchbegriffe wurden verwendet:
+\begin{itemize}
+\item Paarprogrammierung
+\item Pair Programming OR Pair-Programming
+\item Advantages OR Benefits
+\item Expert-novice OR Expert AND novice
+\end{itemize}
+
+\subsubsection{Datenextraktion} Es wurde mehr als 30 Paper gefunden und ausgewertet. Im ersten Schritt wurden die Papers gespeichert. Anschließend wurden die Studien nach ihrem Inhalt tabellarisch klassifiziert. Schließlich wurden hier jene Veröffentlichungen berücksichtigt, die relevante Informationen enthielten (Tabelle \ref{table:PPStudien}).
+
+\begin{table*}[t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Ausgewertete Studien Pair-Programming}
+\label{table:PPStudien}
+\centering
+\begin{tabularx}{\textwidth}{@{}lllllX@{}}
+\toprule
+
+
+Studienkontext & Studientyp & Anzahl Studien & Anzahl Teilnehmer & Referenzen & Anmerkungen \\ \midrule
+Industrie & Umfrage & 3 & 782 & \cite{Bevan2002GuidelinesClass,Williams2006ExaminingProgrammers,Williams2010PairProgramming}  & Vor-und Nachteile, Qualitätsverbesserung \\
+Industrie & Fallstudie & 2 & k.A & \cite{Bevan2002GuidelinesClass}  & Reduktion der Fehler \\
+Industrie & Experiment & 1 & k.A & \cite{Williams2010PairProgramming}  & Überprüfung der Codequalität \\
+Industrie & Studie & 1 & 15 & \cite{Bevan2002GuidelinesClass} & Überprüfung der Codequalität \\
+Industrie & Bericht & 1 & k.A & \cite{Williams2010PairProgramming} & Reduktion der Test und Korrekturarbeiten \\
+Wissenschaft & Studie & 3 & 1408 & \cite{Bevan2002GuidelinesClass,Williams2010PairProgramming}  & Überprüfung der Kompatibilität der Paare \\
+Wissenschaft & Experiment & 1 & 41 & \cite{Bevan2002GuidelinesClass}  & Messung der Qualität des Codes \\
+Industrie & Studie & 1 & 15 & \cite{Williams2006ExaminingProgrammers,Nosek1998TheProgramming}  & Gute Arbeitsatmosphäre; mehr Zuversicht im Team bzgl. der Produktqualität \\
+Wissenschaft & Studie & 1 & 41 & \cite{Williams2000StrengtheningPair-Programming, Alshehri2014RankingProgramming}  & Vergleich "Solos vs. Paare" \\
+Wissenschaft & Studie & 1 & k.A & \cite{Cockburn2001TheProgramming}  & Designqualität, Fehlerreduktion \\
+Wissenschaft & Studie & 1 & 40 & \cite{Lui2006PairExpertexpert,Alshehri2014RankingProgramming} & Messung der Produktivität Anfänger-Experten \\ \bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{Vorgehen Kombination beider Praktiken}
+
+Im Abschnitt \ref{sec:TDD+PP} lag der Fokus auf eine Interpretation der Ergebnissen der beiden vorhergehenden Abschnitten, in denen die Potentiale des TDDs und des PPs untersucht wurden. Infolgedessen wurde keine LR durchgeführt. Stattdessen wurden Studien verwendet, die aus den vorherigen beiden LRs aussortiert wurden, weil in diesen Studien die TDD und das PP gemeinsam untersucht wurden.

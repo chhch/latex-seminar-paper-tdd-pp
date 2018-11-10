@@ -1,0 +1,159 @@
+%!TEX root = bare_conf.tex
+
+\section{Kombination beider Praktiken} \label{sec:TDD+PP}
+
+In diesem Abschnitt wird die Kombination von TDD und PP untersucht. Der Abschnitt besteht aus zwei Teilen. Im ersten Teil werden verschiedene Studien vorgestellt, die in verschiedenen Konstellationen die testgetriebene Entwicklung und das Pair-Programming untersuchen. Im darauffolgenden Teil wird beschrieben, welche Potenziale die Kombination beider Praktiken für den Berufseinsteiger bietet.
+
+\subsection{Auswertung einzelner Studien}
+
+Flohr und Schneider \cite{Flohr2006LessonsTeachings}, \cite{Flohr2005AnProblems} bezieht sich auf das selbe Experiment, untersucht die Auswirkungen von der TDD auf die Produktivität und interne Codequalität. Dazu wurde die Zeit gemessen die Studienteilnehmer für die Umsetzung einer festgelegten Anzahl von Story-Cards benötigten sowie die Code-Coverage. An der Studie nahmen 18 Studenten teil, die in 9 Paaren arbeiteten. Fünf Paare entwickelten testgetrieben und vier traditionell. Die Paare die testgetrieben Entwickelten benötigten weniger Zeit bzw. waren 26.5\% produktiver. Dies war aber nicht statistisch signifikant. Hinsichtlich der Code-Coverage wurde kein statistisch signifikanter Unterschied zwischen den beiden Gruppen festgestellt.
+
+An der Studie von Madeyski \cite{Madeyski2007OnTests} nahmen 98 Studenten teil. Davon arbeiteten 70 in Paaren und 28 allein. Alle Teilnehmer entwickelten testgetrieben. Die Branch-Coverage war bei den 35 Paaren ähnlich wie bei den 28 Solo-Entwicklern. Es konnte kein statistisch signifikanter Unterschied festgestellt werden.
+
+In Madeyski \cite{Madeyski2005PreliminaryQuality} wurden verschiedenen Kombinationen von TDD, TLD, Pair-Programming und Solo-Entwicklung (SP) verglichen. An der Studie nahmen 188 Master-Studenten teil. Die Studenten wurden in vier Gruppen eingeteilt. 28 entwickelten traditionell und alleine (TLD+SP), 28 entwickelten testgetrieben und alleine (TDD+SP), 62 entwickelten traditionell und in Paaren (TLD+PP), und 70 testgetrieben und in Paaren (TDD+PP). Die externe Codequalität war statistisch signifikant geringer, wenn testgetrieben Entwickelt wurde. Es konnte kein Unterschied hinsichtlich der externen Codequalität festgestellt werden, wenn Pair-Programming angewendet wurde.
+
+In der Tabellen \ref{table:TDD+PPAuswertungTDD+PPvsTLD+PP} und Tabelle \ref{table:TDD+PPAuswertungTDD+PPvsTDD+SP} sind die Ergebnisse der Auswertung zusammengefasst.
+
+\begin{table}[bth]
+\renewcommand{\arraystretch}{1.3}
+\caption{Auswertung TDD+PP vs. TLD+PP}
+\label{table:TDD+PPAuswertungTDD+PPvsTLD+PP}
+\centering
+\begin{threeparttable}
+\begin{tabularx}{\columnwidth}{@{}llll@{}}
+\toprule
+Studie & Produktivität & Externe Codequalität & Interne Codequalität \\ \midrule
+\cite{Flohr2006LessonsTeachings} & =\tnote{+} & k.A. & = \\
+\cite{Madeyski2005PreliminaryQuality} & k.A. & - & k.A. \\ \bottomrule
+\end{tabularx}
+\medskip
+      \footnotesize\textbf{Legende:}\smallskip
+      \begin{tablenotes}\footnotesize
+      \item = keine statistisch signifikanten Auswirkungen
+      \item - statistisch signifikant negative Auswirkungen von TDD gegenüber TLD
+      \item[+] positive Tendenzen von TDD+PP gegenüber TLD+PP
+      \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[bth]
+\renewcommand{\arraystretch}{1.3}
+\caption{Auswertung TDD+PP vs. TDD+SP}
+\label{table:TDD+PPAuswertungTDD+PPvsTDD+SP}
+\centering
+\begin{threeparttable}
+\begin{tabularx}{\columnwidth}{@{}llll@{}}
+\toprule
+Studie & Produktivität & Externe Codequalität & Interne Codequalität \\ \midrule
+\cite{Madeyski2007OnTests} & k.A. & k.A. & = \\
+\cite{Madeyski2005PreliminaryQuality} & k.A. & = & k.A. \\ \bottomrule
+\end{tabularx}
+\medskip
+      \footnotesize\textbf{Legende:}\smallskip
+      \begin{tablenotes}\footnotesize
+      \item = keine statistisch signifikanten Auswirkungen
+      \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{Potenziale für Berufseinsteiger}
+
+Die gemeinsame Anwendung von Pair-Programming und der testgetriebenen Entwicklung deckt viele der in Abschnitt \ref{sec:Probleme} beschriebenen Herausforderungen ab. Dies betrifft auch Punkte, die bei der einzelnen Anwendung einer der beiden Praktiken, ansonsten nicht betroffen wären, vergleiche die Unterabschnitte \ref{sec:TDDPotenzial} und \ref{sec:PPPotenzial}.
+
+Für den Berufseinsteiger der mit der testgetriebenen Entwicklung nicht vertraut ist, kann es hilfreich sein, sich während des Pair-Programmings mit der TDD auseinanderzusetzen. Bestenfalls kennt sich sein Partner mit der Praktik aus, und kann ihn anleiten. Dieses Vorgehen wird auch von dem Experten in \cite{Shull2010WhatDevelopment} empfohlen. Andernfalls, wenn beide Entwickler wenig Erfahrung mit der TDD haben, kann der Entwickler in der Rolle des Navigators, zusätzlich ein Augenmerk auf die korrekte Einhaltung der TDD-Regeln legen. Dass es für einen Entwickler sehr schwer sein kann TDD zu lernen, wenn er gleichzeitig mit einer anspruchsvollen Programmieraufgabe beschäftig ist, war auch ein Ergebnis der Studie von Kollanus und Isomöttönen \cite{Kollanus2008Test-drivenViewpoints}. An der Studie nahmen Studenten teil, die keine oder wenig Kenntnisse von der TDD hatten. Nachdem sie eine Programmieraufgabe testgetrieben gelöst hatten, wurden sie nach ihren Erfahrungen befragt.
+
+Die Herausforderungen von Berufseinsteigern sind schematisch in der letzten Spalte \textit{PP+TDD} in Tabelle \ref{table:TDD+PPPotenzial} aufgeführt. Falls die Kombination von der TDD und dem PP eine Herausforderung adressiert, ist dies durch ein \checkmark gekennzeichnet. Hat die Kombination beider Praktiken keinen Einfluss auf eine Herausforderung, ist diese mit einem - dargestellt. Wirkt sich die TDD und PP möglicherweise negativ auf die Herausforderung aus, ist dies durch ein \danger kenntlich gemacht worden.
+
+\begin{table}[bth]
+\renewcommand{\arraystretch}{1.3}
+\caption{Potenzial TDD und PP}
+\label{table:TDD+PPPotenzial}
+\centering
+\begin{threeparttable}
+\begin{tabularx}{\columnwidth}{@{}Xccc@{}}
+\toprule
+Herausforderung & PP & TDD & PP + TDD \\ \midrule
+\multicolumn{4}{l}{Kommunikation} \\
+Zusammenarbeit mit Menschen aus einem anderen Bereich oder mit unterschiedlichen Niveau & \checkmark & \checkmark & \checkmark \\
+Kommunikation mit Kunden nur eingeschränkt möglich & - & - & - \\
+Kommunikation mit Mitarbeitern nur eingeschränkt möglich & \checkmark & \checkmark & \checkmark \\ \midrule
+\multicolumn{4}{l}{Verantwortung} \\
+Verantwortung übernehmen & \checkmark & \checkmark & \checkmark \\
+Verantwortlich für Ergebnisse & \checkmark & \checkmark & \checkmark \\
+Arbeitsdruck & \danger & \checkmark & \checkmark \\
+Selbständig arbeiten & \checkmark & \checkmark & \checkmark \\ \midrule
+\multicolumn{4}{l}{Selbständig lernen} \\
+Neue Domäne & \checkmark & - & \checkmark \\
+Neue Technologie & \checkmark & \checkmark & \checkmark \\
+Altsysteme / fremder Code & \checkmark & \checkmark & \checkmark \\
+Neue Werkzeuge & \checkmark & - & \checkmark \\ \midrule
+\multicolumn{4}{l}{Selbstvertrauen} \\
+Angst Fehler zu machen & \checkmark & \checkmark & \checkmark \\
+Nicht genug zu Wissen & \checkmark & \danger & \checkmark \\ \bottomrule
+\end{tabularx}
+\medskip
+      \footnotesize\textbf{Legende:}\smallskip
+      \begin{tablenotes}\footnotesize
+      \item \checkmark Herausforderung wird angesprochen
+      \item \danger Herausforderung wird verschlimmert
+      \item - keine Auswirkung
+      \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+%\subsection{subsection} text
+%\subsubsection{subsubsection} text
+%\paragraph{paragraph} text
+
+%--
+
+%An der Studie von Kollanus \cite{Kollanus2008Test-drivenViewpoints} nahmen 52 Master-Studenten teil. Für die teilnehmenden Studenten war die TDD ein relativ neues Vorgehen. Nur einige hatten die Praktik zuvor ausprobiert, und noch weniger hatten die TDD ernsthaft angewendet. Die Studenten erhielten eine 90 Minütige einführung in die TDD und einer kleinere Übungsaufgabe, in der sie sich mit den Werkzeugen und Bibliotheken vertraut machen konnten. Anschließend haben die Studenten eine Aufgabe bekommen, die 50 von ihnen in Paaren und 2 individuell gelöst haben. !Nur 15 arbeiteten tatsächlich zusammen!Nachdem sie die Lösung abgegeben hatten, mussten sie einen Fragebogen ausfüllen. Das größte Problem für die Studenten war es, TDD zu lernen, während sie versuchten eine für sie anspruchsvollen Aufgabe zu lösen.
+
+%An der Studie von Müller \cite{Muller2001CaseEnvironment} nahmen 12 Studenten teil. TDD schwer anzuwenden. Kein Vergleiche zu anderen Techniken.
+
+%In Xu \cite{Xu2006EmpiricalDevelopment} wurden die Auswirkungen von den  XP-Praktiken Pair-Programming, testgetriebenen Entwicklung und Refactoring auf die Produktivität, interne Codequalität und externe Codeqaulität untersucht. Zwölf Studenten wurden
+
+%---
+
+%Die IT Welt verändert sich immer stärker und schneller. Die Unternehmen fragen sich welche XP-Methode implementiert werden sollte, um maximale Qualität ihre Produkte bei minimalem Zeitaufwand zu erreichen.
+
+%Test-driven Development (TDD) und Pair-Programming (PP) haben eine Menge Aufmerksamkeit als die wichtigsten Software-Entwicklungspraktiken der eXtreme-Programming-Methodik (XP) gewonnen.\cite{Madeyski2005PreliminaryQuality}
+
+
+%Agile Methoden fördern evolutionäre Veränderungen innerhalb der Softwareentwicklungsprozesse. Sie basieren auf Praktiken, die die Qualitätssicherung erhöhen und effizienter steuern. Es kann festgestellt werden, dass diese Methoden ein disziplinierter Prozess mit eingebauter Qualitätssicherung repräsentieren \cite{Sfetsos2010EmpiricalReview}. Die Qualität Sicherheits- und Kontrollverfahren sind in der gesamten Lebenszyklusentwicklung, von den Anforderungen bis zum Abschluss integriert.
+%Agile Methoden erreichen Produktqualität durch eine Kombination von Best Practices, die ein effizientes Qualitätsmanagement ermöglichen. Viele Studien unterstützen und werben für die Vorteile der agilen Praktiken zur Qualitätssicherung.
+%Das Ziel ist, Software von höherer Qualität, schneller und mit einer großen Endnutzerakzeptanz zu entwickeln. Pair-Programming, als intensive soziale und kollaborative Aktivität, profitiert von individuellen Fähigkeiten, Erfahrungen, Eigenheiten und der Persönlichkeit der Entwickler. Diese Praxis dient als kontinuierlicher Design- und Code-Review-Prozess zur Verringerung von Programmierfehlern \cite{Cockburn2001TheProgramming} Programmierfehlern und zur Verbesserung der Design- und Codequalität. TDD oder Test-first Development (TFD) und Refactoring, sind interaktive und inkrementelle Herangehensweisen an die Programmierung. Beim TDD, schreiben Entwickler automatisch ausführbare Tests (Testfälle), welche vor dem Schreiben des Codes, getestet werden. Ein detailliertes Design wird entwickelt und über neue Funktionalitäten nach dem Schreiben des Codes nachgedacht.
+
+%Zur Messung der Qualität in agilen Methoden haben Sfetsos und Stamelos \cite{Sfetsos2010EmpiricalReview} Daten aus 46 Studien extrahiert. Von den 46 empirischen Studien, die in dem systematischen Review berücksichtigt wurden, waren 24 Experimente, 17 Fallstudien und 5 gemischte Studien (Experiment / Fallstudie, Experiment / Umfrage, Fall Studie / Umfrage und Umfrage / qualitative Untersuchung). Die ausgewählten Studien decken eine breite Palette von Themen ab und wurden unter verschiedenen Rahmenbedingungen durchgeführt, von wissenschaftlichen Projekten über betriebsinterne Untersuchungen bis hin zu Universitätskursen. Das Ergebnis wird in der Tabelle \ref{table:PP+TDDStudien} gezeigt:
+
+%\begin{table}[tbh]
+%\renewcommand{\arraystretch}{1.3}
+%\caption{Arten von Studien}
+%\label{table:PP+TDDStudien}
+%\centering
+%\begin{tabularx}{\columnwidth}{@{}lllll@{}}
+%\toprule
+% & Experiment & Fallstudie & Gemischt & Gesamt \\ \midrule
+%TDD/TFD & 8 & 8 & 2 & 18 \\
+%Pair-Programming & 14 & 3 & 2 & 19 \\
+%Andere Agile Praktiken & 2 & 6 & 1 & 9 \\
+%Gesamt & 24 & 17 & 5 & 46 \\ \bottomrule
+%\end{tabularx}
+%\end{table}
+
+%\subsection{Qualität in TDD / TF Entwicklung}
+
+%Aktuelle empirische Studien, welche in der Tabelle \ref{table:PP+TDDStudien} systematischen Überprüfung enthalten sind, betrachten TDD als die bedeuteten Praxis für Qualitätssicherung in der agilen Softwareentwicklung. Die meisten Experimente und Fallstudien zeigten eine deutliche Verbesserung der Programmqualität. Dabei wurde die externe Qualität üblicherweise durch die Anzahl der bestandenen Abnahmetests oder die Gesamtzahl der aufgetretenen Fehler gemessen. In den Fallstudien oder gemischten Studien wurde die externe Qualität in der Regel durch die Fehlerquote bestimmt, die von den Kunden gemeldet wurden. Die Fehlerquote wurde erheblich reduziert, je nach Fall zwischen 5\% und 90\%. Fallstudien zeigten eine stärkere Verbesserung der externen Qualität als die Experimente, was auf die kontrollierten Einstellungen und die Zeiteinschränkung zurückzuführen sei. Nur zwei Experimente zeigten keine signifikanten Unterschiede in der externen Qualitätsprüfung \cite{Sfetsos2010EmpiricalReview}.
+
+%\subsection{Qualität in Pair-Programming}
+
+%Pair-Programming wird zurzeit in der Industrie und Wissenschaft erfolgreich verwendet und ist in den letzten Jahren intensiv erforscht worden. Die Studien zeigten eine Verbesserung des Designs und der Codequalität um 15\% bis 65\%. Für unbekannte, komplexe und anspruchsvolle Programme, ist Paar-Programming besser geeignet als Solo-Programmierung. Es wurden deutlich weniger Fehler im Code gemeldet. Auf der anderen Seite waren die Ergebnisse für Produktivität und Zeitaufwand widersprüchlich.   \cite{Sfetsos2010EmpiricalReview}.
+
+%\subsection{Qualität in anderen Praktiken}
+
+
+%Viele Studien zu XP Methoden, wie Pair-Programming, testgetriebene Entwicklung und Factoring in Kombination, haben zu höherer Produktqualität geführt. Nur eine Studie konnte keine Unterschiede in der internen oder externen Qualität zwischen XP- und traditionellen Teams feststellen. Es wurde dokumentiert, dass XP-Praktiken bessere Ergebnisse in kleinen Teams erzielen als in großen Teams. Scrum-Verfahren wurden in nur einer Fallstudie verwendet. In dieser Studie wurde sowohl eine Verbesserung der Produktqualität (30\%) als auch in der Kundenzufriedenheit beobachtet \cite{Sfetsos2010EmpiricalReview}.
+
+%Eine Reihe von beschriebenen Vor- und Nachteilen von agilen Praktiken wurde über die Qualitätssteigerung identifiziert. Eine breite Palette von Verbesserungen wurde für TDD oder TFD und Refactoring gemeldet, inklusive eine Verbesserung der externen Qualität. TDD hilft vor allem bei der Verbesserung der Softwarequalität und Reduktion der Fehlerquote, wenn sie in einem industriellen Kontext eingesetzt wird. Bei wissenschaftlichen Anwendungen war die Wirkung nicht so klar, obwohl keine der Studien eine verminderte Qualität verzeichnete. Die Produktivitätseffekte von TDD waren widersprüchlich, und die Ergebnisse variierten für unterschiedliche Kontexte.
+
+%Pair-Programming wurde als eine erfolgreiche agile Praxis identifiziert. Das wichtigste Ergebnis ist, dass die Paxis die Code- und Design-Qualität deutlich verbessert. Darüber hinaus verbessert es die Qualität der Teamarbeit, Kommunikation, Verständnisses und den Wissenstransfers. In Kombination mit TDD / TFD und Refactoring wird Pair-Programming eine Schlüsselpraxis zur Qualitätsverbesserung \cite{Sfetsos2010EmpiricalReview}.
